@@ -1,0 +1,11 @@
+init:
+  - choco install golo -Version 1.1.0
+
+environment:
+  JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+
+build_script:
+  - C:\bin\golo-1.1.0\bin\golo golo --files ModernHeadlineBuilder.golo
+
+cache:
+  - C:\bin\golo-1.1.0
