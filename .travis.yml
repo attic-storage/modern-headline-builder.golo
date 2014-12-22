@@ -1,12 +1,5 @@
-language: java
-
 os: osx
 
-jdk:
-  - openjdk7
-  - oraclejdk7
-  - oraclejdk8
-  
 before_install:
   - brew update
   - brew outdated golo || brew upgrade golo
