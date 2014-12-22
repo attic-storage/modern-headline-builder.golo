@@ -1,11 +1,20 @@
-init:
-  - choco install golo -Version 1.1.0
+branches:
+  only:
+    - master
+
+skip_tags: true
+
+os: Windows Server 2012
 
 environment:
   JAVA_HOME: C:\Program Files\Java\jdk1.8.0
 
-build_script:
-  - C:\bin\golo-1.1.0\bin\golo golo --files ModernHeadlineBuilder.golo
-
 cache:
   - C:\bin\golo-1.1.0
+
+install:
+  - cmd: set PATH=%PATH%;C:\bin\golo-1.1.0\bin
+  - cmd: IF NOT exist "C:\bin\golo-1.1.0\bin\*.*" (cinst golo -Version 1.1.0) ELSE (echo  Golo 1.1.0 already installed)
+
+build_script:
+  - cmd: golo golo --files ModernHeadlineBuilder.golo
