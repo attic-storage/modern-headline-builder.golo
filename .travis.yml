@@ -1,8 +1,9 @@
+# golo is easy to install with brew, and setting objective-c forces the OS to OSX.
 language: objective-c
 os: osx
 
 before_install:
   - brew update
-  - brew outdated golo || brew upgrade golo
+  - brew install golo
   
 script: "golo golo --files ModernHeadlineBuilder.golo"
