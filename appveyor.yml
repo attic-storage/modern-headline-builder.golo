@@ -13,8 +13,8 @@ cache:
   - C:\bin\golo-1.1.0
 
 install:
+  - ps: cinst golo -Version 1.1.0
   - cmd: set PATH=%PATH%;C:\bin\golo-1.1.0\bin
-  - ps: IF NOT exist "C:\bin\golo-1.1.0\bin\*.*" (cinst golo -Version 1.1.0) ELSE (echo  Golo 1.1.0 already installed)
 
 build_script:
   - cmd: golo golo --files ModernHeadlineBuilder.golo
